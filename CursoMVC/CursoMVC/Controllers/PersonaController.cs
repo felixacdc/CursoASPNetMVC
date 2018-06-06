@@ -13,11 +13,16 @@ namespace CursoMVC.Controllers
         public ActionResult Persona()
         {
             Persona obj = new Persona();
-            obj.edad = 24;
-            obj.nombre = "Felix";
-            obj.apellido = "Mendez";
+            obj.edad = Convert.ToInt32(Request.Form["edad"]);
+            obj.nombre = Request.Form["nombre"].ToString();
+            obj.apellido = Request.Form["apellido"].ToString();
 
             return View(obj);
+        }
+
+        public ActionResult Index()
+        {
+            return View();
         }
     }
 }

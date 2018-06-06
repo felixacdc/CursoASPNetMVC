@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h3>Datos Personales</h3>
+
+        <form action="Persona/Persona" method="post">
+            <label>Nombre: </label> <input type="text" name="nombre" value="" /> <br />
+            <label>Apellido: </label> <input type="text" name="apellido" value="" /> <br />
+            <label>Edad: </label> <input type="number" name="edad" value="0" /> <br />
+            <input type="submit" name="enviar" value="Enviar" />
+        </form>
+    </div>
+</body>
+</html>
