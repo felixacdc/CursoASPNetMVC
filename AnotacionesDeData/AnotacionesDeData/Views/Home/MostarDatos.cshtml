@@ -1,0 +1,30 @@
+﻿@model AnotacionesDeData.Models.DatosPersonales
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MostarDatos</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+                <th>@Html.DisplayNameFor(model => model.Edad)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Nombre)</td>
+                <td>@Html.DisplayFor(model => model.Apellido)</td>
+                <td>@Html.DisplayFor(model => model.Edad)</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

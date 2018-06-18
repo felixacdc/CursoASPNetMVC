@@ -1,4 +1,4 @@
-﻿@model AnotacionesDeData.Models.Datos
+﻿@model AnotacionesDeData.Models.DatosEmail
 
 @{
     Layout = null;
@@ -16,7 +16,19 @@
         <h3>Ingrese los datos</h3> 
         @using (Html.BeginForm("DatosPersonales", "Home", FormMethod.Post))
         {
-            @Html.EditorForModel()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+            <div>
+                <div>
+                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div><br />
+                <div>
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
             <input type="submit" value="Enviar"/>
         }
     </div>

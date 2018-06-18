@@ -16,17 +16,38 @@ namespace AnotacionesDeData.Controllers
         }
 
         [HttpPost]
-        public ActionResult DatosPersonales(Datos obj)
+        public ActionResult DatosPersonales(DatosEmail obj)
         {
             if(ModelState.IsValid)
             {
-                return View(obj);
+                String email = obj.Email;
+                String pass = obj.Password;
+
+                if (email == "pablo@gmail.com" && pass == "123")
+                {
+                    return View();
+                }
+                else
+                    return View("Index");                
             }
             else
             {
                 return View("Index");
             }
             
+        }
+
+        [HttpPost]
+        public ActionResult MostarDatos(DatosPersonales obj)
+        {
+            if (ModelState.IsValid)
+            {
+                return View(obj);
+            }
+            else
+            {
+                return View("DatosPersonales");
+            }
         }
     }
 }
