@@ -23,7 +23,7 @@ namespace AnotacionesDeData.Controllers
                 String email = obj.Email;
                 String pass = obj.Password;
 
-                if (email == "pablo@gmail.com" && pass == "123")
+                if (email == "pablo@gmail.com" && pass == "123456")
                 {
                     return View();
                 }

@@ -27,7 +27,12 @@
                     @Html.LabelFor(m => m.Password, new { @class = "control-label" })
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                </div>
+                </div><br />
+                <div>
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div><br />
             </div>
             <input type="submit" value="Enviar"/>
         }

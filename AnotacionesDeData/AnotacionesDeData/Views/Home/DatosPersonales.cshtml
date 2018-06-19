@@ -32,6 +32,11 @@
                     @Html.TextBoxFor(p => p.Edad, new { @class = "form-control" })
                     @Html.ValidationMessageFor(p => p.Edad, "", new { @class = "text-danger" })
                 </div><br />
+                <div>
+                    @Html.LabelFor(p => p.Number, new { @class = "control-label" })
+                    @Html.TextBoxFor(p => p.Number, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(p => p.Number, "", new { @class = "text-danger" })
+                </div><br />
             </div>
 
             <input type="submit" value="Enviar" />
