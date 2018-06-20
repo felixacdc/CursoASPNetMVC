@@ -5,5 +5,21 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div class="card card-container">
+        <h2 class="titleLogin">Iniciar sesion</h2>
+        @using (Html.BeginForm("Usuarios", "Home", FormMethod.Post, new { @class = "form-signin" }))
+        {
+            <div>
+                @Html.TextAreaFor(dl => dl.Email, new { @class = "form-control", @placeholder = "Email" })
+                @Html.ValidationMessageFor(dl => dl.Email, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.PasswordFor(dl => dl.Password, new { @class = "form-control", @placeholder = "Password" })
+                @Html.ValidationMessageFor(dl => dl.Password, "", new { @class = "text-danger" })
+            </div><br />
+            <input type="submit" value="Entrar" class="btn btn-signin"/>
+        }
+    </div>
+</div>
 

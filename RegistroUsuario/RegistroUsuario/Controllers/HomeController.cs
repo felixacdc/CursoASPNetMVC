@@ -13,5 +13,10 @@ namespace RegistroUsuario.Controllers
         {
             return View();
         }
+
+        public ActionResult Usuarios()
+        {
+            return View();
+        }
     }
 }
