@@ -4,14 +4,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    
+    @{ 
+        string User = Convert.ToString(Session["userName"]);
+
+        <h2>Bienvenido: @User</h2>
+    }
 </head>
 <body>
     <div>
         @RenderBody()
     </div>
-
-    <center>
-        <p>&copy;Felix</p>
-    </center>
+    
+    <footer>
+        <center>
+            <p>&copy;Felix</p>
+        </center>
+    </footer>        
 </body>
 </html>

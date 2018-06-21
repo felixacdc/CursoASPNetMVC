@@ -19,5 +19,29 @@ namespace RegistroUsuario.Models
         public String Password { get; set; }
 
         public String UserName { get; set; }
+
+        UserDataDataContext user = new UserDataDataContext();
+
+        public bool Login()
+        {
+            var query = from u in user.Users
+                        where u.Email == Email && u.Password == Password
+                        select u;
+
+            if (query.Count() > 0)
+            {
+                var query2 = from u in user.Users
+                             where u.Email == Email
+                             select u;
+                var datos = query2.ToList();
+                foreach (var Data in datos)
+                {
+                    UserName = Data.UserName;
+                }
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }
